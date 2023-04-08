@@ -1,0 +1,2 @@
+stty -F /dev/ttyUSB$1 115200
+less -f /dev/ttyUSB$1
