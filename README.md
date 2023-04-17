@@ -26,3 +26,23 @@ Warning: Using D0 and D1 on the Wemos D1 R1 implies that you cannot upload code 
 The decoder and viewer are interconnected wirelessly via ESP_NOW and form a small private network. They do not require any WiFi router or similar to be around. Nor do they need internet access. The decoder however will need to know the mac address of the viewer. In de decoder code you need to fill the "broadcastAddress" with the proper address: 
 
 uint8_t broadcastAddress[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+
+You can find out what the MAC address of the viewer is by checking the log output of the arduino IDE when programming the device. Amongst its output it will give the MAC address. E.g.
+
+esptool.py v3.0
+Serial port /dev/ttyUSB0
+Connecting....
+Chip is ESP8266EX
+Features: WiFi
+Crystal is 26MHz
+MAC: xx:xx:xx:xx:xx:xx
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Auto-detected Flash size: 4MB
+Compressed 368320 bytes to 261438...
+Wrote 368320 bytes (261438 compressed) at 0x00000000 in 5.9 seconds (effective 500.4 kbit/s)...
+Hash of data verified.
